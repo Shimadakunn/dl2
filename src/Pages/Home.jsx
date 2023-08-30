@@ -6,6 +6,7 @@ const Container = styled.div`
   z-index: 1;
   transition: transform 500ms ease-out;
   body[data-nav="true"] &{transform: translateX(-20%);}
+  overflow: hidden;
 `
 const CoverContainer = styled.div`
     position: relative;
@@ -104,7 +105,7 @@ function Home() {
     return (
         <Container>
             <CoverContainer>
-                <Cover src="../../img/Douni 0.jpg" className={isLoaded ? 'loaded' : ''}></Cover>
+                <Cover src="./public/img/Douni 0.jpg" className={isLoaded ? 'loaded' : ''}></Cover>
                 <TitleContainer className={isLoaded ? 'loaded' : ''}>
                     <Title id="yes">title</Title>
                     <Subtitle>subtitle</Subtitle>
