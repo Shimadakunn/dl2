@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @font-face {
+        font-family: 'Couture';
+        src: url('./font/couture-bld.otf') format('woff');
+      }
+      @font-face {
+        font-family: 'Aesthetique';
+        src: url('./font/aestethic.otf') format('woff');
+      }
+      @font-face {
+        font-family: 'Bright';
+        src: url('./font/bright.otf') format('woff');
+      }
+      @font-face {
+        font-family: 'Couture';
+        src: url('./font/couture.otf') format('woff');
+      }
+      @font-face {
+        font-family: 'Style';
+        src: url('./font/style.otf') format('woff');
+      }
+      @font-face {
+        font-family: 'Jandy';
+        src: url('./font/jandy.otf') format('woff');
+      }
+      *{
+        margin:0 0;
+        padding: 0 0;
+        font-family: 'Couture';
+        cursor: none;
+      }
+      body,#root{
+        position: relative;
+      }
+      body[data-page="/dl"]{
+        overflow: hidden;
+      }
+      html{
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+      }
+      html::-webkit-scrollbar{
+        display: none;
+      }
+    </style>
+    <title>Photo Gallery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+      (function(){
+          emailjs.init("MbO4swYDQQEn9wQmR");
+      })();
+    </script>
+    <link rel="icon" href="./logo/logo.png" type="image/x-icon">
+  </head>
+  <body data-nav = "false" data-page="/" data-menu = "false">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
