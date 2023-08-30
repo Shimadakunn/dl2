@@ -154,7 +154,7 @@ color: white;
     transform-origin: bottom left;
   }
 `;j.div`
-`;function v1(){const e=Sn(),t=Il();x.useEffect(()=>{document.body.dataset.page=e.pathname},[e.pathname]);const[n,r]=x.useState(!1);return x.useEffect(()=>{r(!0)},[]),u(u1,{children:P(c1,{children:[u(d1,{src:"../img/Douni 0.jpg",className:n?"loaded":""}),P(f1,{className:n?"loaded":"",children:[u(p1,{id:"yes",children:"title"}),u(h1,{children:"subtitle"})]}),P(m1,{onClick:()=>{t("/dl/gallery")},className:n?"loaded":"",children:[u("span",{style:{fontFamily:"Aesthetique"},children:"Enter Gallery"}),u("svg",{viewBox:"0 0 46 16",height:"15",width:"35",xmlns:"http://www.w3.org/2000/svg",id:"arrow-horizontal",children:u("path",{transform:"translate(30)",d:"M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z","data-name":"Path 10",id:"Path_10"})})]})]})})}const g1=j.div`
+`;function v1(){const e=Sn(),t=Il();x.useEffect(()=>{document.body.dataset.page=e.pathname},[e.pathname]);const[n,r]=x.useState(!1);return x.useEffect(()=>{r(!0)},[]),u(u1,{children:P(c1,{children:[u(d1,{src:"../img/Douni 0 min.jpg",className:n?"loaded":""}),P(f1,{className:n?"loaded":"",children:[u(p1,{id:"yes",children:"title"}),u(h1,{children:"subtitle"})]}),P(m1,{onClick:()=>{t("/dl/gallery")},className:n?"loaded":"",children:[u("span",{style:{fontFamily:"Aesthetique"},children:"Enter Gallery"}),u("svg",{viewBox:"0 0 46 16",height:"15",width:"35",xmlns:"http://www.w3.org/2000/svg",id:"arrow-horizontal",children:u("path",{transform:"translate(30)",d:"M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z","data-name":"Path 10",id:"Path_10"})})]})]})})}const g1=j.div`
 overflow: hidden;
 `,y1=j.div`
   overflow: hidden;
