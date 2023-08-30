@@ -310,26 +310,26 @@ function Contact(){
                     <Lane className={isLoaded ? "loaded left" : "left"} >
                         <div ref={el => (divRefs.current[0] = el)}>
                             <Project className="portrait top" >
-                                <Image src="../img/Synda/2.jpg"></Image>
+                                <Image src="./img/Synda/2.webp"></Image>
                             </Project>
                             <Project className="portrait mid">
-                                <Image src="../img/Eva Clem Clair/0.jpg"></Image>
+                                <Image src="./img/Eva Clem Clair/0.webp"></Image>
                             </Project>
                             <Project className="portrait bot">
-                                <Image src="../img/Eva Clem Sombre/0.JPG"></Image>
+                                <Image src="./img/Eva Clem Sombre/0.webp"></Image>
                             </Project>
                         </div>
                     </Lane>
                     <Lane className={isLoaded ? "loaded right" : "right"}>
                         <div ref={el => (divRefs.current[1] = el)}>
                             <Project className="portraitBis top">
-                                <Image src="../img/Eva Robot/12.JPG"></Image>
+                                <Image src="./img/Eva Robot/12.webp"></Image>
                             </Project>
                             <Project className="portraitBis mid">
-                                <Image src="../img/Anjeli/0.jpg"></Image>
+                                <Image src="./img/Anjeli/0.webp"></Image>
                             </Project>
                             <Project className="portraitBis bot">
-                                <Image src="../img/Morgane/0.JPG"></Image>
+                                <Image src="./img/Morgane/0.webp"></Image>
                             </Project>
                         </div>
                     </Lane>

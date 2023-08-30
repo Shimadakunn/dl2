@@ -96,7 +96,7 @@ function Shoot1() {
 return (
     <Page>
       <div class="sliced-img">
-        <img src='../img/Eva Dou/0.jpg' class='img-responsive hidden'></img>
+        <img src='./img/Eva Dou/0.webp' class='img-responsive hidden'></img>
         <div class="slice s1"></div>
         <div class="slice s2"> </div>
       </div>
@@ -106,39 +106,39 @@ return (
       <Container className ="one">
           <Left>
               <ImgContainer ref={componentRefs[1]} className={isVisible[1] ? 'paysage fade-in' : 'paysage'} id="first">
-                  <Img src="../img/Synda/0.jpg"></Img>
+                  <Img src="./img/Synda/0.webp"></Img>
               </ImgContainer>
               <ImgContainer ref={componentRefs[2]} className={isVisible[2] ? 'portrait fade-in' : 'portrait'} id="third">
-                  <Img src="../img/Anjeli/0.jpg"></Img>
+                  <Img src="./img/Anjeli/0.webp"></Img>
               </ImgContainer>
           </Left>
           <Right>
             <ImgContainer ref={componentRefs[3]} className={isVisible[3] ? 'paysage fade-in' : 'paysage'} id="second">
-              <Img src="../img/Eva Robot/0.JPG"></Img>
+              <Img src="./img/Eva Robot/0.webp"></Img>
             </ImgContainer>
           </Right>
       </Container>
       <Container className ="two">
           <Left>
             <ImgContainer ref={componentRefs[4]} className={isVisible[4] ? 'paysage fade-in' : 'paysage'} id="four">
-              <Img src="../img/Eva 2/0.jpg"></Img>
+              <Img src="./img/Eva 2/0.webp"></Img>
             </ImgContainer>
           </Left>
           <Right>
             <ImgContainer ref={componentRefs[5]} className={isVisible[5] ? 'portrait fade-in' : 'portrait'} id="five">
-              <Img src="../img/Eva Clem Sombre/0.JPG"></Img>
+              <Img src="./img/Eva Clem Sombre/0.webp"></Img>
             </ImgContainer>
           </Right>
       </Container>
       <Container className ="three">
           <Left>
             <ImgContainer ref={componentRefs[6]} className={isVisible[6] ? 'portrait fade-in' : 'portrait'} id="six">
-              <Img src="../img/Eva Clem Clair/0.jpg"></Img>
+              <Img src="./img/Eva Clem Clair/0.webp"></Img>
             </ImgContainer>
           </Left>
           <Right>
             <ImgContainer ref={componentRefs[7]} className={isVisible[7] ? 'paysage fade-in' : 'paysage'} id="seven">
-              <Img src="../img/Egypte/0.JPG"></Img>
+              <Img src="./img/Egypte/0.webp"></Img>
             </ImgContainer>
           </Right>
       </Container>
