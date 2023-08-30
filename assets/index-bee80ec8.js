@@ -282,6 +282,7 @@ overflow: hidden;
         text-decoration: none;
         color: black;
         top: 45%;
+        @media (max-width: 1350px) {top:47.5%};
         @media (max-width: 675px) {top: 40%;left: -20%}
         transition: 250ms ease-in-out;
         &:hover{
@@ -295,6 +296,7 @@ overflow: hidden;
     }
     .SVGmail{
         top: 45%;
+        @media (max-width: 1350px) {top:47.5%};
         @media (max-width: 675px) {top: 40%;left: -20%;}
         left: 0.5vw;
         opacity:0;
@@ -306,6 +308,7 @@ overflow: hidden;
         text-decoration: none;
         color: black;
         top: 65%;
+        @media (max-width: 1350px) {top:67.5%};
         @media (max-width: 675px) {top: 60%;left: -10%;}
         transition: 250ms ease-in-out;
         &:hover{
@@ -320,6 +323,7 @@ overflow: hidden;
     .SVGphone{
         top: 65%;
         left: 0.5vw;
+        @media (max-width: 1350px) {top:67.5%};
         @media (max-width: 675px) {top: 60%;left: -10%;}
         opacity:0;
         transition: 250ms ease-in-out;
@@ -330,6 +334,7 @@ overflow: hidden;
         text-decoration: none;
         color: black;
         top: 85%;
+        @media (max-width: 1350px) {top:87.5%};
         @media (max-width: 675px) {top: 80%;left: 8%;}
         transition: 250ms ease-in-out;
         &:hover{
@@ -346,6 +351,7 @@ overflow: hidden;
         left: 0.5vw;
         opacity:0;
         transition: 250ms ease-in-out;
+        @media (max-width: 1350px) {top:87.5%};
         @media (max-width: 675px) {top: 80%;}
     } 
 `,cc=A.div`
@@ -364,11 +370,11 @@ overflow: hidden;
     .or{top: 15%;left: 0;@media (max-width: 675px) {display: none;}}
     .send{top: 15%;@media (max-width: 675px) {width:150%;left:-30%;top:10%}}
     .Hname{top: 40%;@media (max-width: 675px) {top: 25%;left: -10%;}}
-    .Iname{top: 45%;cursor: text;font-family: Arial, Helvetica, sans-serif;@media (max-width: 675px) {top:35%;left: -25%;}}
+    .Iname{top: 45%;cursor: text;font-family: Arial, Helvetica, sans-serif;@media (max-width: 1350px) {top:47.5%};@media (max-width: 675px) {top:35%;left: -25%;}}
     .Hmail{top: 60%;@media (max-width: 675px) {top: 45%;left: -5%;}}
-    .Imail{top: 65%;cursor: text;font-family: Arial, Helvetica, sans-serif;@media (max-width: 675px) {top: 55%;left: -25%;}}
+    .Imail{top: 65%;cursor: text;font-family: Arial, Helvetica, sans-serif;@media (max-width: 1350px) {top:67.5%};@media (max-width: 675px) {top: 55%;left: -25%;}}
     .Hmessage{top: 80%;@media (max-width: 675px) {width:150%; top: 65%;left: -20%;}}
-    .Imessage{top: 85%;cursor: text;font-family: Arial, Helvetica, sans-serif;@media (max-width: 675px) {width:150%; top: 72.5%;left: -37.5%;}}  
+    .Imessage{top: 85%;cursor: text;font-family: Arial, Helvetica, sans-serif;@media (max-width: 1350px) {top:87.5%};@media (max-width: 675px) {width:150%; top: 72.5%;left: -37.5%;}}  
 `,dc=A.div`
     text-align: center;
     position: absolute;
