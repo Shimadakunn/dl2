@@ -105,7 +105,7 @@ function Home() {
     return (
         <Container>
             <CoverContainer>
-                <Cover src="./public/img/Douni 0.jpg" className={isLoaded ? 'loaded' : ''}></Cover>
+                <Cover src="./img/Douni 0.jpg" className={isLoaded ? 'loaded' : ''}></Cover>
                 <TitleContainer className={isLoaded ? 'loaded' : ''}>
                     <Title id="yes">title</Title>
                     <Subtitle>subtitle</Subtitle>
