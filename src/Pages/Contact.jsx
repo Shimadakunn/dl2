@@ -26,7 +26,7 @@ const InfoColumn = styled.form`
     align-items: center;
     justify-content: center;
     &.mobile {display: none;}
-    @media (max-width: 1350px) {left:0%;&.mobile {display: block;};&.pc {display: none;}}
+    @media (max-width: 1350px) {left:0%;display: block;&.mobile {display: block;}}
 `
 const InfoContainer = styled.div`
     height: 65vh;
@@ -39,6 +39,7 @@ const Informations = styled.div`
     left: 10%;
     flex: 1;
     position: relative;
+    @media (max-width: 1350px) {&.pc {display: none;}}
     @media (max-width: 1350px) {top:25%;left:35%;}
     @media (max-width: 675px) {top:0%;left:90%;}
     *{font-family: 'Aesthetique';position: absolute;}
@@ -358,9 +359,9 @@ function Contact(){
                 </InfoColumn>
             </Left>
             <Right>
-                <InfoColumn className="pc">
+                <InfoColumn>
                     <InfoContainer>
-                        <Informations className="Info">
+                        <Informations className="Info pc">
                             <h1>Get in touch</h1>
                             <h2 className="Hmail">Write me</h2>
                             <a href="mailto:example@example.com" className = "mail interactable">dounia.limam@gmail.com</a>
@@ -372,26 +373,6 @@ function Contact(){
                             <a href="https://www.instagram.com/yakamuzoseiya"  target="_blank" className = "insta interactable">Instagram</a>
                             <div className ="SVGinsta"><Instagram fill ="#a3c585" width="15"/></div>
                         </Informations>
-                        <Form className="Form">
-                            <h1 className ="or">Or</h1>
-                            <h1 className ="send">Send me Mail</h1>
-                            <h2 className="Hname">Your name</h2>
-                            <input type="text" className = "Iname" id = "name" placeholder="Name"/>
-                            <h2 className = "Hmail">Your mail</h2>
-                            <input type="mail" className = "Imail" id = "mail" placeholder="Mail"/>
-                            <h2 className = "Hmessage">Your message</h2>
-                            <textarea type="text" className = "Imessage" id = "message" placeholder="Message"/>
-                            <Button className="interactable" onClick={sendMail}>
-                                <span>Submit</span>
-                                <svg viewBox="0 0 60 16" height="15" width="35" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
-                                    <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
-                                </svg>
-                            </Button>
-                        </Form>
-                    </InfoContainer>
-                </InfoColumn>
-                <InfoColumn className="mobile">
-                    <InfoContainer>
                         <Form className="Form">
                             <h1 className ="or">Or</h1>
                             <h1 className ="send">Send me Mail</h1>
