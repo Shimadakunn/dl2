@@ -7,8 +7,9 @@ const MenuButtonContainer = styled.div`
     position: fixed;
     z-index: 2;
     top: 50%;
-    left: 50%;
+    left: 49.9%;
     transform: translate(-50%, -50%);
+    @media (max-width: 650px) {left: 49.8%;}
     transition: opacity 1s ease-out;
     opacity: 0;
     &.{isLoaded} {opacity: 1;}
@@ -16,9 +17,9 @@ const MenuButtonContainer = styled.div`
 `
 const MenuButton = styled.div`
     font-family: 'Jandy';
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     @media (max-width: 1025px) {font-size: 2rem;}
-    @media (max-width: 650px) {font-size: 1.5rem;}
+    @media (max-width: 650px) {font-size: 1.25rem;}
     font-weight: 1000;
     font-color: black;
     transform: rotate(90deg);

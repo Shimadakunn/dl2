@@ -166,7 +166,7 @@ function Gallery() {
                 </Overlay>
               </Projet>
               <Projet className = "paysage" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="bot">
+                <Overlay show={id} className="mid">
                   <Img src="./img/Egypte/0.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>

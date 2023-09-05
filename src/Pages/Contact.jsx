@@ -25,6 +25,7 @@ const InfoColumn = styled.form`
     display: flex;
     align-items: center;
     justify-content: center;
+    // position: sticky;
     &.mobile {display: none;}
     @media (max-width: 1350px) {left:0%;display: block;&.mobile {display: block;}}
 `
@@ -236,6 +237,7 @@ const Left = styled.div`
 const Right = styled.div`
   flex: 1;
   position: sticky;
+  @media (min-width: 1350px) {height: 115%;}
   top: 0;
   pointer-events: none;
   z-index: 1;
