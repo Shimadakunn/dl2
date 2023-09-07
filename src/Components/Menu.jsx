@@ -9,7 +9,7 @@ const MenuButtonContainer = styled.div`
     top: 50%;
     left: 49.9%;
     transform: translate(-50%, -50%);
-    @media (max-width: 650px) {left: 49.8%;}
+    @media (max-width: 1350px) {left: 50%;}
     transition: opacity 1s ease-out;
     opacity: 0;
     &.{isLoaded} {opacity: 1;}
@@ -84,11 +84,10 @@ function Menu() {
     };
   }, []);
   useEffect(() => {
-    // "document.documentElement.scrollTo" is the magic for React Router Dom v6
     document.documentElement.scrollTo({
       top: 0,
       left: 0,
-      behavior: "instant", // Optional if you want to skip the scrolling animation
+      behavior: "instant"
     });
   }, [pathname]);
     return (

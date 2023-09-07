@@ -45,16 +45,6 @@ const Overlay = styled.div`
   height: 100%;
   overflow: hidden;
   &:hover ${OverlayText} {opacity: 1;}
-  // #${({ show }) => show}{
-  //   background: inherit;
-  //   transition: all 1s ease-in-out;
-  //   position: fixed;
-  //   z-index: 500;
-  //   top: 0;
-  //   left: 0;
-  //   width: 100vw;
-  //   height: 100vh;
-  // }
   &.top{padding-bottom: 0.75vw;}
   &.mid{padding: 0.75vw 0;}
   &.bot{padding-top: 0.75vw;}
@@ -73,7 +63,6 @@ const Projet = styled.div`
   box-sizing: border-box;
   width: 100%;
   transition: all 1s ease;
-  #${({ show }) => show} {transform: scale(1.5);}
   &.portrait {aspect-ratio: 1/1.5;}
   &.portraitBis {aspect-ratio: 1/1.75;}
   &.paysage ${Text} {top: 70%; }
@@ -105,20 +94,12 @@ function Gallery() {
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     setIsLoaded(true);
-    // window.scrollTo(0, 0);
   }, []);
 
   const location = useLocation();
-  useEffect(() => {
-    document.body.dataset.page = location.pathname;
-  }, [location.pathname]);
-  
-  const [id, setId] = useState('');
-  function handleClick(event) {
-    const clickedId = event.target.id;
-    setId(clickedId);
-    console.log(`Clicked element id: ${clickedId}`);
-  }
+    useEffect(() => {
+        document.body.dataset.page = location.pathname;
+    }, [location.pathname]);
 
   const divRefs = useRef([]);
   useEffect(() => {
@@ -126,13 +107,11 @@ function Gallery() {
       const bodyHeight = document.body.offsetHeight;
       const pageHeight = window.innerHeight;
       divRefs.current.forEach(div => {
-        if (div) {
           const divHeight = div.offsetHeight;
           const scrollPosition = window.scrollY;
           const posFinal = bodyHeight - divHeight;
           const factor = posFinal/(bodyHeight - pageHeight)*scrollPosition;
           div.style.transform = `translateY(${factor}px)`;
-        }
       });
     };
     window.addEventListener('scroll', handleScroll); // Add scroll event listener
@@ -142,38 +121,32 @@ function Gallery() {
   }, []);
 
   return (
-    <Container>
+    <Container decelerationRate={0.5}>
       <Columns className={isLoaded ? 'loaded' : ''}>
         <Right>
           <Lane className = {isLoaded ? "left pc loaded" : "left pc"}>
             <Projet_container ref={el => (divRefs.current[0] = el)}>
               <Projet className = "portrait" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="top" >
-                  <Img src="./img/Anjeli/0.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="top" >
+                  <Img src="./img/Anjeli/0.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
               <Projet className = "paysage" onClick={() => {setTimeout(() => {navigate("/");}, 2000);}}>
-                <Overlay show={id} className="mid">
-                  <Img src="./img/Synda/0.webp" className="interactable" id="ya" onClick={handleClick}></Img>
+                <Overlay  className="mid">
+                  <Img src="./img/Synda/0.webp" className="interactable" id="ya"></Img>
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
               <Projet className = "portraitBis" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="mid">
-                  <Img src="./img/Eva Clem Clair/5.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
-                  <OverlayText>Good Morning</OverlayText>
-                </Overlay>
-              </Projet>
-              <Projet className = "paysage" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="mid">
-                  <Img src="./img/Egypte/0.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="mid">
+                  <Img src="./img/Eva Clem Clair/5.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
               <Projet className = "portraitBis" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="bot">
-                  <Img src="./img/Synda/2.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="bot">
+                  <Img src="./img/Synda/2.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
@@ -182,32 +155,38 @@ function Gallery() {
           <Lane className = {isLoaded ? "mid one pc loaded" : "mid one pc"}>
             <Projet_container ref={el => (divRefs.current[1] = el)}>
               <Projet className = "portraitBis" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="top">
-                  <Img src="./img/Eva Clem Sombre/0.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="top">
+                  <Img src="./img/Eva Clem Sombre/0.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
               <Projet className = "portrait" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="mid">
-                  <Img src="./img/Eva Dou/2.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="mid">
+                  <Img src="./img/Eva Dou/2.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
               <Projet className = "paysage" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="mid">
-                  <Img src="./img/Eva 2/0.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="mid">
+                  <Img src="./img/Eva 2/0.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
               <Projet className = "portraitBis" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="mid">
-                  <Img src="./img/Eva Robot/12.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="mid">
+                  <Img src="./img/Eva Robot/12.webp" className="interactable" id="yes"></Img>              
+                  <OverlayText>Good Morning</OverlayText>
+                </Overlay>
+              </Projet>
+              <Projet className = "paysage" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
+                <Overlay  className="mid">
+                  <Img src="./img/Egypte/0.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
               <Projet className = "portrait" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="bot">
-                  <Img src="./img/Unborn/0.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="bot">
+                  <Img src="./img/Unborn/0.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
@@ -216,62 +195,62 @@ function Gallery() {
           <Lane className = {isLoaded ? "left mobile loaded" : "left mobile"}>
           <Projet_container ref={el => (divRefs.current[4] = el)}>
               <Projet className = "portraitBis" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="top" >
-                  <Img src="./img/Anjeli/0.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="top" >
+                  <Img src="./img/Anjeli/0.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
               <Projet className = "paysage" onClick={() => {setTimeout(() => {navigate("/");}, 2000);}}>
-                <Overlay show={id} className="mid">
-                  <Img src="./img/Synda/0.webp" className="interactable" id="ya" onClick={handleClick}></Img>
+                <Overlay  className="mid">
+                  <Img src="./img/Synda/0.webp" className="interactable" id="ya"></Img>
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
               <Projet className = "portraitBis" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="mid">
-                  <Img src="./img/Eva Clem Clair/5.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="mid">
+                  <Img src="./img/Eva Clem Clair/5.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
               <Projet className = "paysage" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="mid">
-                  <Img src="./img/Egypte/0.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="mid">
+                  <Img src="./img/Egypte/0.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
               <Projet className = "portraitBis" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="mid">
-                  <Img src="./img/Synda/2.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="mid">
+                  <Img src="./img/Synda/2.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
               <Projet className = "portraitBis" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="mid">
-                  <Img src="./img/Eva Clem Sombre/0.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="mid">
+                  <Img src="./img/Eva Clem Sombre/0.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
               <Projet className = "portrait" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="mid">
-                  <Img src="./img/Eva Dou/2.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="mid">
+                  <Img src="./img/Eva Dou/2.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
               <Projet className = "paysage" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="mid">
-                  <Img src="./img/Eva 2/0.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="mid">
+                  <Img src="./img/Eva 2/0.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
               <Projet className = "portraitBis" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="mid">
-                  <Img src="./img/Eva Robot/12.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="mid">
+                  <Img src="./img/Eva Robot/12.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
               <Projet className = "portrait" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="bot">
-                  <Img src="./img/Unborn/0.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="bot">
+                  <Img src="./img/Unborn/0.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
@@ -282,38 +261,44 @@ function Gallery() {
           <Lane className = {isLoaded ? "mid two pc loaded" : "mid two pc"}>
             <Projet_container ref={el => (divRefs.current[3] = el)}>
               <Projet className = "portrait" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="top">
-                  <Img src="./img/Sarah/0.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="top">
+                  <Img src="./img/Sarah/0.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
               <Projet className = "portrait" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="mid">
-                  <Img src="./img/Eva Clem Clair/0.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="mid">
+                  <Img src="./img/Eva Clem Clair/0.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
               <Projet className = "paysage" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="mid">
-                  <Img src="./img/Douni/0.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="mid">
+                  <Img src="./img/Douni/0.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
               <Projet className = "portrait" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="mid">
-                  <Img src="./img/Anjeli/2.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="mid">
+                  <Img src="./img/Anjeli/2.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
               <Projet className = "paysage" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="mid">
-                  <Img src="./img/Eva Dou/0.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="mid">
+                  <Img src="./img/Eva Dou/0.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
               <Projet className = "portraitBis" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="bot">
-                  <Img src="./img/Sarah/1.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="mid">
+                  <Img src="./img/Egypte/1.webp" className="interactable" id="yes"></Img>              
+                  <OverlayText>Good Morning</OverlayText>
+                </Overlay>
+              </Projet>
+              <Projet className = "portraitBis" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
+                <Overlay  className="bot">
+                  <Img src="./img/Sarah/1.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
@@ -322,26 +307,20 @@ function Gallery() {
           <Lane className = {isLoaded ? "right pc loaded" : "right pc"}>
             <Projet_container ref={el => (divRefs.current[2] = el)}>
               <Projet className = "portraitBis" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="top">
-                  <Img src="./img/Morgane/0.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="top">
+                  <Img src="./img/Morgane/0.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
               <Projet className = "paysage" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="mid">
-                  <Img src="./img/Eva Robot/0.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
-                  <OverlayText>Good Morning</OverlayText>
-                </Overlay>
-              </Projet>
-              <Projet className = "portraitBis" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="mid">
-                  <Img src="./img/Egypte/1.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="mid">
+                  <Img src="./img/Eva Robot/0.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
               <Projet className = "portrait" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="bot">
-                  <Img src="./img/Eva Clem Sombre/4.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="bot">
+                  <Img src="./img/Eva Clem Sombre/4.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
@@ -350,62 +329,62 @@ function Gallery() {
           <Lane className = {isLoaded ? "right mobile loaded" : "right mobile"}>
             <Projet_container ref={el => (divRefs.current[5] = el)}>
               <Projet className = "portrait" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="top">
-                  <Img src="./img/Sarah/0.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="top">
+                  <Img src="./img/Sarah/0.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
               <Projet className = "portraitBis" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="mid">
-                  <Img src="./img/Eva Clem Clair/0.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="mid">
+                  <Img src="./img/Eva Clem Clair/0.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
               <Projet className = "paysage" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="mid">
-                  <Img src="./img/Douni/0.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="mid">
+                  <Img src="./img/Douni/0.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
               <Projet className = "portrait" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="mid">
-                  <Img src="./img/Anjeli/2.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="mid">
+                  <Img src="./img/Anjeli/2.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
               <Projet className = "paysage" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="mid">
-                  <Img src="./img/Eva Dou/0.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="mid">
+                  <Img src="./img/Eva Dou/0.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
               <Projet className = "portraitBis" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="mid">
-                  <Img src="./img/Sarah/1.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="mid">
+                  <Img src="./img/Sarah/1.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
               <Projet className = "portrait" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="mid">
-                  <Img src="./img/Morgane/0.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="mid">
+                  <Img src="./img/Morgane/0.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
               <Projet className = "paysage" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="mid">
-                  <Img src="./img/Eva Robot/0.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="mid">
+                  <Img src="./img/Eva Robot/0.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
               <Projet className = "portrait" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="mid">
-                  <Img src="./img/Egypte/1.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="mid">
+                  <Img src="./img/Egypte/1.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
               <Projet className = "portraitBis" onClick={() => {setTimeout(() => {navigate("/dl/shoot");}, 2000);}}>
-                <Overlay show={id} className="bot">
-                  <Img src="./img/Eva Clem Sombre/4.webp" className="interactable" id="yes" onClick={handleClick}></Img>              
+                <Overlay  className="bot">
+                  <Img src="./img/Eva Clem Sombre/4.webp" className="interactable" id="yes"></Img>              
                   <OverlayText>Good Morning</OverlayText>
                 </Overlay>
               </Projet>
