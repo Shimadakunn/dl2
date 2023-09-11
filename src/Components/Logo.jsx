@@ -55,8 +55,8 @@ const Name = styled.div`
   top: 10%;
   opacity: ${({ show }) => (show ? 1 : 0)};
   transition: opacity 500ms ease;
-  body[data-page="/dl/gallery"] &{color: white;}
-  body[data-page="/dl/shoot"] &{color: white;}
+  body[data-page="/gallery"] &{color: white;}
+  body[data-page="/shoot"] &{color: white;}
   @media (max-width: 1025px) {font-size: 1.5rem;}
   @media (max-width: 540px) {left:5%;font-size: 1.25rem;}
 `
@@ -77,7 +77,7 @@ function Logo() {
     return (
         <Container>
           <Content>
-            <SvgContainer className="interactable" onClick={() =>{navigate('/dl/')}}>
+            <SvgContainer className="interactable" onClick={() =>{navigate('/')}}>
               <Svg show={!showNewDiv}><HeartEye fill = "#a3c585" width="100%"/></Svg>
               <Svg show={showNewDiv}><HeartEye fill = "#75975e" width="100%"/></Svg>
             </SvgContainer>

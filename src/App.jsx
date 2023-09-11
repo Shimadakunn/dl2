@@ -16,10 +16,10 @@ return (
         <Logo/>
         <Menu/>
         <Routes>
-            <Route exact path="/dl" element={<Home/>} />
-            <Route exact path="/dl/gallery" element={<Gallery/>} />
-            <Route exact path="/dl/shoot" element={<Shoot/>} />
-            <Route exact path="/dl/contact" element={<Contact/>} />
+            <Route exact path="" element={<Home/>} />
+            <Route exact path="/gallery" element={<Gallery/>} />
+            <Route exact path="/shoot" element={<Shoot/>} />
+            <Route exact path="/contact" element={<Contact/>} />
         </Routes>
     </Router>
 );

@@ -13,7 +13,7 @@ const MenuButtonContainer = styled.div`
     transition: opacity 1s ease-out;
     opacity: 0;
     &.{isLoaded} {opacity: 1;}
-    body[data-page="/dl/"] &{display: none;}
+    body[data-page="/"] &{display: none;}
 `
 const MenuButton = styled.div`
     font-family: 'Jandy';
@@ -24,8 +24,8 @@ const MenuButton = styled.div`
     font-color: black;
     transform: rotate(90deg);
     transition: transform 0.5s ease;
-    body[data-page="/dl/shoot"] &{transform: rotate(0deg); font-size: 2.5rem;}
-    body[data-page="/dl/contact"] &{font-size: 2.5rem; @media (max-width: 1025px) {font-size: 1.25rem;transform: rotate(0deg);}
+    body[data-page="/shoot"] &{transform: rotate(0deg); font-size: 2.5rem;}
+    body[data-page="/contact"] &{font-size: 2.5rem; @media (max-width: 1025px) {font-size: 1.25rem;transform: rotate(0deg);}
 `
 const NavBar = styled.div`
     position: fixed;
@@ -39,7 +39,7 @@ const NavBar = styled.div`
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    body[data-page="/dl/"] &{display: none;}
+    body[data-page="/"] &{display: none;}
 `
 const NavFlex = styled.div`
     flex: 1;
@@ -97,16 +97,16 @@ function Menu() {
         </MenuButtonContainer>
         <NavBar>
           <NavFlex>
-            <Navlink className="interactable home" onClick={() => {document.body.dataset.nav = document.body.dataset.nav === "true" ? "false" : "true";navigate("/dl/");}}>Home</Navlink>
+            <Navlink className="interactable home" onClick={() => {document.body.dataset.nav = document.body.dataset.nav === "true" ? "false" : "true";navigate("/");}}>Home</Navlink>
           </NavFlex>
           <NavFlex>
-            <Navlink className="interactable gallery" onClick={() => {document.body.dataset.nav = document.body.dataset.nav === "true" ? "false" : "true";navigate("/dl/gallery");}}>Gallery</Navlink>
+            <Navlink className="interactable gallery" onClick={() => {document.body.dataset.nav = document.body.dataset.nav === "true" ? "false" : "true";navigate("/gallery");}}>Gallery</Navlink>
           </NavFlex>
           <NavFlex>
-            <Navlink className="interactable shoot" onClick={() => {document.body.dataset.nav = document.body.dataset.nav === "true" ? "false" : "true";navigate("/dl/shoot");}}>Shoot</Navlink>
+            <Navlink className="interactable shoot" onClick={() => {document.body.dataset.nav = document.body.dataset.nav === "true" ? "false" : "true";navigate("/shoot");}}>Shoot</Navlink>
           </NavFlex>
           <NavFlex>
-            <Navlink className="interactable contact" onClick={() => {document.body.dataset.nav = document.body.dataset.nav === "true" ? "false" : "true";navigate("/dl/contact");}}>Contact</Navlink>
+            <Navlink className="interactable contact" onClick={() => {document.body.dataset.nav = document.body.dataset.nav === "true" ? "false" : "true";navigate("/contact");}}>Contact</Navlink>
           </NavFlex>
         </NavBar>
         </>
