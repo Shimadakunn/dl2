@@ -6,7 +6,7 @@ import Instagram from '../Components/SVG/InstagramSVG'
 import styled from "styled-components"
 
 const Container = styled.div`
-    height: 298vh;
+    height: 268vh;
     position: relative;
     @media (max-width: 1350px) { height: 100vh;display: flex;}
     @media (max-width: 675px) {flex-direction: column;}
