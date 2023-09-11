@@ -107,7 +107,7 @@ function Home() {
             <CoverContainer>
                 <Cover src="./img/Douni/0.webp" className={isLoaded ? 'loaded' : ''}></Cover>
                 <TitleContainer className={isLoaded ? 'loaded' : ''}>
-                    <Title id="yes">title</Title>
+                    <Title id="yes">Title</Title>
                     <Subtitle>subtitle</Subtitle>
                 </TitleContainer>
                 <Button onClick={() => {navigate("/gallery")}} className={isLoaded ? 'loaded' : ''}>
