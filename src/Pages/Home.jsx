@@ -23,21 +23,42 @@ const Cover = styled.img`
     opacity: 1;
   }
 `
-const TitleContainer = styled.div`
-    position: absolute;
-    top: 25%;
-    left: 10%;
-    opacity: 0;
-  transition: opacity 2s ease-in-out;
-  &.loaded {
-    opacity: 1;
+const TextContainer = styled.div`
+  position: absolute;
+  top: 32.5%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  height: 15%;
+  width: 25%;
+  display: flex;
+  // background-color: white;
+  justify-content: ;
+  align-items: flex-start;
+  flex-direction: column;
+  &.div {
+    flex: 1;
+    width: 50%;
+    height: 50%;
   }
 `
 const Title = styled.div`
-color: white;
-`
-const Subtitle = styled.div`
-color: white;
+font-family: 'Ranade';
+color: black;
+&.name {
+  font-size: 2rem;
+  font-weight: 1000;
+}
+&.desc {
+  letter-spacing: 0.5rem;
+  font-size: 1.25rem;
+  font-family: 'Vaga';
+}
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+  &.loaded {
+    
+    opacity: 1;
+  }
 `
 const Button = styled.button`
   opacity: 0;
@@ -106,10 +127,14 @@ function Home() {
         <Container>
             <CoverContainer>
                 <Cover src="./img/Douni/0.webp" className={isLoaded ? 'loaded' : ''}></Cover>
-                <TitleContainer className={isLoaded ? 'loaded' : ''}>
-                    <Title id="yes">Title</Title>
-                    <Subtitle>subtitle</Subtitle>
-                </TitleContainer>
+                <TextContainer>
+                  <div className={"div"}>
+                    <Title className={isLoaded ? 'loaded name' : 'name'}>Dounia Limam</Title>
+                  </div>
+                  <div className={"div"}>
+                    <Title className={isLoaded ? 'loaded desc' : 'desc'}>Event Photographer</Title>
+                  </div>
+                </TextContainer>
                 <Button onClick={() => {navigate("/gallery")}} className={isLoaded ? 'loaded' : ''}>
                     <span style={{fontFamily:'Aesthetique'}}>Enter Gallery</span>
                     <svg viewBox="0 0 46 16" height="15" width="35" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">

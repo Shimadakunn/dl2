@@ -2,8 +2,8 @@ import React from 'react'
 
 function HeartEye({fill, width}) {
     return (
-        <svg width={width||"800px"} height={width||"800px"} version="1.1" id="eye-heart" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-                viewBox="0 0 60 40" enable-background="new 0 0 60 40" xml:space="preserve">
+        <svg width={width||"800px"} height={width||"800px"} version="1.1" id="eye-heart" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" 
+                viewBox="0 0 60 40" enableBackground="new 0 0 60 40" xmlSpace="preserve">
             <g id="eye-heart-color">
                 <path fill="#FFFFFF" d="M59,20c-2.9629,6.4629-13.7158,19-29,19S3.9629,26.4629,1,20C3.9629,13.5371,14.7158,1,30,1
                     S56.0371,13.5371,59,20z"/>

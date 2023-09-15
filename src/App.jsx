@@ -3,6 +3,7 @@ import React,{ useEffect } from 'react'
 import Home from './Pages/Home'
 import Gallery from './Pages/Gallery'
 import Contact from './Pages/Contact'
+import Pricing from './Pages/Pricing'
 import Shoot from './Pages/Shoots/Shoot1'
 
 import Mouse from './Components/Mouse'
@@ -18,8 +19,9 @@ return (
         <Routes>
             <Route exact path="" element={<Home/>} />
             <Route exact path="/gallery" element={<Gallery/>} />
-            <Route exact path="/shoot" element={<Shoot/>} />
+            <Route exact path="/pricing" element={<Pricing/>} />
             <Route exact path="/contact" element={<Contact/>} />
+            <Route exact path="/shoot" element={<Shoot/>} />
         </Routes>
     </Router>
 );

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import React, { useRef, useEffect, useState } from "react";
 import { useNavigate,useLocation} from 'react-router-dom';
-import MenuSVG from './SVG/MenuSVG.jsx';
 
 const MenuButtonContainer = styled.div`
     position: fixed;
@@ -58,13 +57,13 @@ const Navlink = styled.div`
     body[data-nav="true"] &{opacity: 1;
         &.home{transform: translateX(0%);}
         &.gallery{transform: translateX(0%);}
-        &.shoot{transform: translateX(0%);}
+        &.pricing{transform: translateX(0%);}
         &.contact{transform: translateX(0%);}
         transition: opacity 0.5s ease, transform 0.5s ease;}
     body[data-nav="false"] &{opacity: 0;
         &.home{transform: translateX(200%);}
         &.gallery{transform: translateX(-200%);}
-        &.shoot{transform: translateX(200%);}
+        &.pricing{transform: translateX(200%);}
         &.contact{transform: translateX(-200%);}
         transition: opacity 0.5s ease 0s, transform 0.5s ease 0.5s;}
     
@@ -103,7 +102,7 @@ function Menu() {
             <Navlink className="interactable gallery" onClick={() => {document.body.dataset.nav = document.body.dataset.nav === "true" ? "false" : "true";navigate("/gallery");}}>Gallery</Navlink>
           </NavFlex>
           <NavFlex>
-            <Navlink className="interactable shoot" onClick={() => {document.body.dataset.nav = document.body.dataset.nav === "true" ? "false" : "true";navigate("/shoot");}}>Shoot</Navlink>
+            <Navlink className="interactable pricing" onClick={() => {document.body.dataset.nav = document.body.dataset.nav === "true" ? "false" : "true";navigate("/pricing");}}>Pricing</Navlink>
           </NavFlex>
           <NavFlex>
             <Navlink className="interactable contact" onClick={() => {document.body.dataset.nav = document.body.dataset.nav === "true" ? "false" : "true";navigate("/contact");}}>Contact</Navlink>
