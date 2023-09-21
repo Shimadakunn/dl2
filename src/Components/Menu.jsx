@@ -12,7 +12,7 @@ const MenuButtonContainer = styled.div`
     transition: opacity 1s ease-out;
     opacity: 0;
     &.{isLoaded} {opacity: 1;}
-    body[data-page="/"] &{display: none;}
+    body[data-page="/"] &{display: none;};
 `
 const MenuButton = styled.div`
     font-family: 'Jandy';
@@ -23,8 +23,9 @@ const MenuButton = styled.div`
     font-color: black;
     transform: rotate(90deg);
     transition: transform 0.5s ease;
-    body[data-page="/shoot"] &{transform: rotate(0deg); font-size: 2.5rem;}
-    body[data-page="/contact"] &{font-size: 2.5rem; @media (max-width: 1025px) {font-size: 1.25rem;transform: rotate(0deg);}
+    body[data-page="/shoot"] &{transform: rotate(0deg); font-size: 2.5rem;};
+    body[data-page="/contact"] &{font-size: 2.5rem; @media (max-width: 1025px) {font-size: 1.25rem;transform: rotate(0deg);}};
+    body[data-page="/pricing"] &{font-size: 2.5rem; @media (max-width: 1025px) {font-size: 1.25rem;transform: rotate(0deg);}};    
 `
 const NavBar = styled.div`
     position: fixed;

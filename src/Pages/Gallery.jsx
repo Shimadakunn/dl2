@@ -47,6 +47,7 @@ const Overlay = styled.div`
   transition: all 0.5s cubic-bezier(0,0,.19,1);
   overflow: hidden;
   &:hover {
+    border: 2px solid #75975e;
     transform: scale(1.02);
     box-shadow: 10px 10px 15px 10px rgba(0,0,0,0.85);
     border-radius: 50px;

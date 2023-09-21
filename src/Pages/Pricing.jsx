@@ -233,17 +233,19 @@ const Left = styled.div`
   z-index: 1;
   transition: transform 500ms ease-out;
   body[data-nav="true"] &{transform: translateX(20%);
-    @media (max-width: 675px) {transform: translateY(-100%);}}
+    @media (max-width: 1024px) {transform: translateX(-20%);};
+    @media (max-width: 675px) {transform: translateY(-100%);};};
 `
 const Right = styled.div`
-  @media (min-width: 1350px) {height: 115%;}
+  @media (min-width: 1350px) {height: 115%;};
   top: 0;
   pointer-events: none;
   z-index: 1;
   display: flex;
   transition: transform 500ms ease-out;
   body[data-nav="true"] &{transform: translateX(-15%);
-    @media (max-width: 675px) {transform: translateY(100%);}}
+    @media (max-width: 1024px) {transform: translateX(15%);};
+    @media (max-width: 675px) {transform: translateY(100%);};};
 `
 
 function Pricing(){
